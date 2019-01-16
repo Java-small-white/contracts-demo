@@ -1,0 +1,24 @@
+
+server:
+  port: 10001
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/zebraart?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: qq709444732
+  application:
+    name: producer
+
+mybatis:
+  type-aliases-package: com.xiaobai.producer.model.po
+  configuration:
+    #¿ªÆôÍÕ·å
+    map-underscore-to-camel-case: true
+    default-statement-timeout: 60
+  mapper-locations: classpath:mapper/*.xml
+
+mapper:
+  identity: MYSQL
